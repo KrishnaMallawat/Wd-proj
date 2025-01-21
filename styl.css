@@ -1,0 +1,82 @@
+body {
+    color: rgb(245, 214, 174);
+    background-color: rgb(213, 224, 235); /* Background color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+header{
+    color: black;
+}
+h3{
+    color: black;
+    text-align: center;
+}
+td > img{
+    border-radius: 20%;
+}
+a :hover{
+    background-color:gray;
+    color: white;
+}
+#logo {
+    align-items: center;
+    border-radius: 50%; 
+    outline: 2px solid black;
+}
+li a:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+}
+button{
+    /* border: none; */
+    background-color: rgb(89, 125, 117);
+    border-radius: 40%;
+    color: rgb(27, 204, 204);
+}
+header {    
+    text-align: center;
+    padding: 20px;
+}
+a{
+    text-decoration: none;
+    
+    color: #918d7b;
+}
+#bar{
+    padding: 5px;
+    background-color: rgb(3,3,3);
+    /* width: 41vw; */
+    margin: auto;
+}
+nav ul {
+    display: flex;
+    justify-content: center; 
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+main {
+    margin-top: 20px;
+}
+section {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgb(86, 84, 84); /* Section background color */
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+footer {
+    background-color: black;
+    color: white;
+    /* height: 5vh; */
+    text-align: center;
+    margin-top: 40px;
+}
+html{
+    text-transform: capitalize;
+}
