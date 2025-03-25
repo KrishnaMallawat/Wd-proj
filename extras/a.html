@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Club Admission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>College Club Admission Form</h1>
+        <form action="/submit_form" method="POST" enctype="multipart/form-data">
+            <!-- Personal Information Section -->
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Club Preference Section -->
+            <div class="form-group">
+                <label for="club">Which club are you interested in?</label>
+                <select id="club" name="club" required>
+                    <option value="">Select a club</option>
+                    <option value="sports">Sports Club</option>
+                    <option value="music">Music Club</option>
+                    <option value="literature">Literature Club</option>
+                    <option value="science">Science Club</option>
+                    <option value="art">Art Club</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="reason">Why do you want to join this club?</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+            </div>
+
+            <!-- Additional Information Section -->
+            <div class="form-group">
+                <label for="resume">Upload your Resume (Optional):</label>
+                <input type="file" id="resume" name="resume">
+            </div>
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit Admission Form">
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalyst Club Success Stories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header h1 {
+            color: #77aaff;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        .success-story {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border: #ccc 1px solid;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .success-story h2 {
+            color: #333;
+        }
+        .success-story img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .success-story p {
+            color: #555;
+        }
+        .add-story {
+            background: #fff;
+            padding: 20px;
+            border: #ccc 1px solid;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .add-story input, .add-story textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .add-story button {
+            padding: 10px 20px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-story button:hover {
+            background: #555;
+        }
+        .email-form input[type="email"] {
+            width: calc(100% - 120px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .email-form button {
+            padding: 10px 20px;
+            background: #77aaff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .email-form button:hover {
+            background: #5599dd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Catalyst Club Success Stories</h1>
+        </div>
+    </header>
+    <div class="container" id="stories-container">
+        <div class="success-story">
+            <h2>Story Title 1</h2>
+            <img src="about us.png" alt="Story Image 1">
+            <p>Text info about the success story 1...</p>
+            <form class="email-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Send Story</button>
+            </form>
+        </div>
+        <div class="success-story">
+            <h2>Story Title 2</h2>
+            <img src="abus advisor2.png" alt="Story Image 2">
+            <p>Text info about the success story 2...</p>
+            <form class="email-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Send Story</button>
+            </form>
+        </div>
+        <div class="add-story">
+            <h2>Add a New Success Story</h2>
+            <form id="add-story-form">
+                <input type="text" placeholder="Story Title" required>
+                <input type="file" accept="image/*" required>
+                <textarea placeholder="Text info about the success story" required></textarea>
+                <button type="submit">Add Story</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.email-form').forEach(form => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                if (validateEmail(email)) {
+                    alert('Success story sent to ' + email);
+                } else {
+                    alert('Please enter a valid email address');
+                }
+            });
+        });
+
+        document.getElementById('add-story-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const title = this.querySelector('input[type="text"]').value;
+            const image = this.querySelector('input[type="file"]').files[0];
+            const text = this.querySelector('textarea').value;
+            if (title && image && text) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const newStory = document.createElement('div');
+                    newStory.classList.add('success-story');
+                    newStory.innerHTML = `
+                        <h2>${title}</h2>
+                        <img src="${e.target.result}" alt="Story Image">
+                        <p>${text}</p>
+                        <form class="email-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Send Story</button>
+                        </form>
+                    `;
+                    document.getElementById('stories-container').insertBefore(newStory, document.querySelector('.add-story'));
+                    alert('New story added');
+                };
+                reader.readAsDataURL(image);
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
+</body>
+</html>

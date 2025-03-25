@@ -6,265 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalyst Club Success Stories</title>
     <link rel="stylesheet" href="styl.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: rgb(213, 224, 235); /* Background color */
-            color: #333;
-        }
-
-        .container {
-            width: 85%;
-            margin: 30px auto;
-            overflow: hidden;
-        }
-
-        header {
-            color: #333;
-            padding: 40px 0;
-            text-align: center;
-            border-bottom: 3px solid #77aaff;
-        }
-
-        header h1 {
-            font-size: 38px;
-            margin: 0;
-        }
-
-        header h2 {
-            font-size: 24px;
-            color: #555;
-        }
-
-        #logo {
-            max-width: 200px;
-            margin-bottom: 15px;
-        }
-
-        .stories {
-            margin: 40px 0;
-        }
-
-        .story {
-            background: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .story h2 {
-            font-size: 26px;
-            margin-top: 0;
-            margin-bottom: 30px; /* Increase space below the title */
-            color: #77aaff;
-        }
-
-        .story p {
-            color: #555;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 0; /* Make space below the info 0 */
-        }
-
-        .story:nth-child(even) h2 {
-            color: #ff6347;
-        }
-
-        .story:nth-child(odd) p {
-            color: #333;
-        }
-
-        .share {
-            margin-top: 30px; /* Increase space above the buttons */
-            display: flex;
-            justify-content: flex-start;
-            /* Align buttons side by side */
-            gap: 15px; /* Increase space between the buttons */
-        }
-
-        .share button {
-            background: linear-gradient(135deg, #4caf50, #2196f3);
-            /* Green to Blue gradient */
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-            font-weight: 500;
-        }
-
-        .share button:hover {
-            background: linear-gradient(135deg, #2196f3, #4caf50);
-            /* Reversed gradient on hover */
-        }
-
-        .login-form {
-            background: #fff;
-            padding: 30px;
-            margin: 30px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            display: none;
-            /* Hide the login form initially */
-        }
-
-        .login-form h2 {
-            margin-top: 0;
-            color: #333;
-            font-size: 26px;
-        }
-
-        .login-form label {
-            display: block;
-            margin: 10px 0 5px;
-            color: #666;
-            font-size: 16px;
-        }
-
-        .login-form input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border 0.3s;
-        }
-
-        .login-form input:focus {
-            border-color: #77aaff;
-            outline: none;
-        }
-
-        .login-form button {
-            background: #ff9800;
-            /* Bright Orange */
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 500;
-            transition: background 0.3s;
-        }
-
-        .login-form button:hover {
-            background: #ff5722;
-            /* Darker Orange on hover */
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 30px;
-            margin-top: 40px;
-        }
-
-        footer p,
-        footer nav {
-            margin: 10px 0;
-        }
-
-        footer nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0;
-        }
-
-        footer nav ul li {
-            display: inline-block;
-            margin: 0 15px;
-        }
-
-        footer nav ul li a button {
-            background: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-            padding: 10px 15px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        footer nav ul li a button:hover {
-            background: #77aaff;
-            color: #333;
-        }
-
-        #showLoginForm {
-            display: block;
-            margin: 20px auto;
-            /* Center the button horizontally */
-            background: #ff9800;
-            /* Bright Orange */
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 500;
-            transition: background 0.3s;
-        }
-
-        #showLoginForm:hover {
-            background: #ff5722;
-            /* Darker Orange on hover */
-        }
-
-        #resetStories {
-            display: block;
-            margin: 20px auto;
-            /* Center the button horizontally */
-            background: #ff4c4c;
-            /* Red color */
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 500;
-            transition: background 0.3s;
-        }
-
-        #resetStories:hover {
-            background: #ff1a1a;
-            /* Darker red on hover */
-        }
-
-        .delete-button {
-            background: #ff4c4c;
-            /* Red color for delete button */
-            color: #fff;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-            font-weight: 500;
-            margin-left: auto;
-        }
-
-        .delete-button:hover {
-            background: #ff1a1a;
-            /* Darker red on hover */
-        }
-
-        .story .username, .story .date {
-            font-size: 14px;
-            color: #777;
-            text-align: right; /* Align to the right */
-            margin: 0; /* Remove margin */
-        }
-    </style>
+    <link rel="stylesheet" href="ss-style.css">
 </head>
 
 <body>
@@ -280,6 +22,8 @@
             <li><a href="wo we are.html">Who We Are</a></li>
             <li><a href="initiaves.html">Events</a></li>
             <li><a href="get involved.html">Get Involved</a></li>
+            <li><a href="feedbackform.html">Feedback</a></li>
+            <li><a href="member_dashboard.html">Member Dashboard</a></li>
         </ul>
     </nav>
     <div class="container">
@@ -326,7 +70,7 @@
             },
             {
                 title: "Corporate Collaboration Success:",
-                info: "Catalyst Club collaborated with a leading corporation to provide students with hands-on experience in solving real-world business challenges. This collaboration resulted in several students receiving internships and job offers from the corporation.",
+                info: "Catalyst Club hosted an inter-college business plan competition where students presented innovative solutions to real-world problems. The winners not only received mentorship and resources but also launched their startup, which gained traction and was later incubated in a well-known startup accelerator.",
                 username: "Krishna Mallawat",
                 date: new Date().toLocaleDateString('en-GB') // Use today's date
             },
@@ -352,9 +96,9 @@
                     <p class="username">Added by: ${story.username || 'Krishna Mallawat'}</p>
                     <p class="date">Date: ${story.date || new Date().toLocaleDateString('en-GB')}</p>
                     <div class="share">
-                        <button class="share-email">📧Share by Email</button>
-                        <button class="copy-clipboard">📋Copy to Clipboard</button>
-                        <button class="delete-button" data-index="${index}">🗑️Delete</button>
+                        <button class="share-email">Share by Email</button>
+                        <button class="copy-clipboard">Copy to Clipboard</button>
+                        <button class="delete-button" data-index="${index}">Delete</button>
                     </div>
                 `;
                 storiesContainer.appendChild(storyElement);
@@ -382,22 +126,31 @@
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (email && emailPattern.test(email)) {
-                const subject = "This is an email about a success story of Catalyst Club";
-                const body = `**Title:** ${title}\n\n**Information:**\n${info}\n\n**Added by:** ${username}\n**Date:** ${date}`;
+                const subject = "Success Story from Catalyst Club";
+                const body = `
+********** SUCCESS STORY **********
+Title: ${title}
 
-                // URL encode the subject and body for proper formatting in the mailto link
+Information:
+${info}
+
+Added by: ${username}
+Date: ${date}
+
+------------------------------------
+Shared by Catalyst Club, VIT Pune
+************************************
+                `;
                 const encodedSubject = encodeURIComponent(subject);
                 const encodedBody = encodeURIComponent(body);
 
-                // Construct the mailto URL with the encoded subject and body
                 const mailtoLink = `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
-
-                // Redirect to the mailto link to open the default email client
                 window.location.href = mailtoLink;
             } else {
                 alert('Please enter a valid email address.');
             }
         }
+
 
         function copyToClipboard(title, text, username, date) {
             const formattedText = `
@@ -480,4 +233,4 @@ Shared from Catalyst Club, VIT Pune
     </script>
 </body>
 
-</html>
+</html></script>
